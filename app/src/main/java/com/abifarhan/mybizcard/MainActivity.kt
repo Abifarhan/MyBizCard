@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CreateBizCard() {
-    val buttonClickedState = remember{
+    val buttonClickedState = remember {
         mutableStateOf(false)
     }
 
@@ -76,20 +76,20 @@ fun CreateBizCard() {
                 Button(onClick = {
                     buttonClickedState.value = !buttonClickedState.value
                 }) {
-                    Text(text = "Portfolio",
-                    style = MaterialTheme.typography.button)
+                    Text(
+                        text = "Portfolio",
+                        style = MaterialTheme.typography.button
+                    )
                 }
 
                 if (buttonClickedState.value) {
                     Content()
-                } else{
-                    Box(){
-
-                    }
+                } else {
+                    Box() {}
 
                 }
             }
-                        
+
         }
     }
 }
@@ -102,21 +102,25 @@ fun Content() {
             .fillMaxHeight()
             .fillMaxWidth()
             .padding(5.dp)
-    ){
-        Surface(modifier = Modifier
-            .padding(3.dp)
-            .fillMaxWidth()
-            .fillMaxHeight(),
+    ) {
+        Surface(
+            modifier = Modifier
+                .padding(3.dp)
+                .fillMaxWidth()
+                .fillMaxHeight(),
             shape = RoundedCornerShape(corner = CornerSize(6.dp)),
             border = BorderStroke(width = 2.dp, color = Color.LightGray)
         ) {
 
-            PortFolio(data = listOf("Project 1",
-                "Project 2",
-                "Project 3",
-                "Project 4",
-                "Project 5",
-            ))
+            PortFolio(
+                data = listOf(
+                    "Project 1",
+                    "Project 2",
+                    "Project 3",
+                    "Project 4",
+                    "Project 5",
+                )
+            )
 
         }
     }
@@ -124,9 +128,26 @@ fun Content() {
 
 @Composable
 fun PortFolio(data: List<String>) {
-    LazyColumn{
-        items(data) { item ->  
-            Text(text = item)
+    LazyColumn {
+        items(data) { item ->
+            Card(
+                modifier = Modifier
+                    .padding(13.dp)
+                    .fillMaxWidth(),
+                shape = CircleShape,
+            ) {
+                Surface(modifier = Modifier.size(
+                    50.dp, 50.dp)
+                    .padding(5.dp)
+                ) {
+
+                }
+                Image(
+                    painter = painterResource(id = R.drawable.ic_baseline_person_24),
+                    contentDescription = "list image",
+                    modifier = Modifier.size(50.dp)
+                )
+            }
         }
     }
 }
