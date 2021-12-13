@@ -63,16 +63,44 @@ fun CreateBizCard() {
                 CreateImageProfile()
                 Divider(
                 )
-
                 CreateInfo()
                 Button(onClick = { /*TODO*/ }) {
-                    Text(text = "Portfolio")
+                    Text(text = "Portfolio",
+                    style = MaterialTheme.typography.button)
                 }
 
             }
                         
         }
     }
+}
+
+@Preview
+@Composable
+fun Content() {
+    Box(
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth()
+            .padding(5.dp)
+    ){
+        Surface(modifier = Modifier
+            .padding(3.dp)
+            .fillMaxWidth()
+            .fillMaxHeight(),
+            shape = RoundedCornerShape(corner = CornerSize(6.dp)),
+            border = BorderStroke(width = 2.dp, color = Color.LightGray)
+        ) {
+
+            PortFolio(data = listOf("Project 1", "Project 2", "Project 3"))
+
+        }
+    }
+}
+
+@Composable
+fun PortFolio(data: List<String>) {
+    Text(text = "Projects go here!")
 }
 
 @Composable
@@ -116,11 +144,11 @@ private fun CreateImageProfile(modifier: Modifier = Modifier) {
         )
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    MyBizCardTheme {
-        CreateBizCard()
-    }
-}
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun DefaultPreview() {
+//    MyBizCardTheme {
+//        CreateBizCard()
+//    }
+//}
