@@ -74,13 +74,20 @@ fun CreateBizCard() {
                 )
                 CreateInfo()
                 Button(onClick = {
-                    Content()
+                    buttonClickedState.value = !buttonClickedState.value
                 }) {
                     Text(text = "Portfolio",
                     style = MaterialTheme.typography.button)
                 }
 
+                if (buttonClickedState.value) {
+                    Content()
+                } else{
+                    Box(){
 
+                    }
+
+                }
             }
                         
         }
