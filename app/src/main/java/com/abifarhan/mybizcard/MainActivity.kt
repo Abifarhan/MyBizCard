@@ -62,29 +62,39 @@ fun CreateBizCard() {
             ) {
                 CreateImageProfile()
                 Divider(
-                    startIndent = 123.dp
                 )
-                
-                Text(text = "Miles P. +",
-                    modifier = Modifier.fillMaxWidth(),
-                    fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center,
-                    fontSize = 30.sp,
-                    color = Color.Blue
-                )
-                Text(text = "Android Compose Programmer")
-                Text(text = "@themilesCompose")
 
-                Button(
-                    onClick = { /*TODO*/ },
-                    Modifier.padding(10.dp),
-                ) {
-
+                CreateInfo()
+                Button(onClick = { /*TODO*/ }) {
                     Text(text = "Portfolio")
                 }
+
             }
                         
         }
+    }
+}
+
+@Composable
+private fun CreateInfo() {
+    Column(modifier = Modifier.padding(5.dp)) {
+        Text(
+            text = "Miles P. +",
+            style = MaterialTheme.typography.h4,
+            color = MaterialTheme.colors.primaryVariant
+        )
+
+        Text(
+            text = "Android Compose Programmer",
+            modifier = Modifier.padding(3.dp)
+        )
+
+        Text(
+            text = "@themilesCompose",
+            modifier = Modifier.padding(2.dp),
+            style = MaterialTheme.typography.subtitle1
+        )
+
     }
 }
 
