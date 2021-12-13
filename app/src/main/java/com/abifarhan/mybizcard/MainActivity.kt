@@ -50,7 +50,6 @@ fun CreateBizCard() {
         mutableStateOf(false)
     }
 
-
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -137,28 +136,32 @@ fun PortFolio(data: List<String>) {
                     .fillMaxWidth()
             ) {
 
-                Column() {
-
-                }
-                Surface(modifier = Modifier
-                    .size(
-                        50.dp, 50.dp
-                    )
-                    .padding(5.dp),
-                    shape = CircleShape,
-                    border = BorderStroke(0.5.dp, Color.LightGray),
-                    elevation = 4.dp,
-                    color = MaterialTheme.colors.onSurface.copy(alpha = 0.5f)
+                Column(
+                    modifier = Modifier.height(300.dp),
+                    verticalArrangement = Arrangement.Top,
+                    horizontalAlignment = Alignment.Start
                 ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.ic_baseline_person_24),
-                        contentDescription = "list image",
-                        modifier = Modifier
-                            .size(50.dp)
-                            .clip(CircleShape)
-                        ,
-                    )
+                    Surface(modifier = Modifier
+                        .size(
+                            50.dp, 50.dp
+                        )
+                        .padding(5.dp),
+                        shape = CircleShape,
+                        border = BorderStroke(0.5.dp, Color.LightGray),
+                        elevation = 4.dp,
+                        color = MaterialTheme.colors.onSurface.copy(alpha = 0.5f)
+                    ) {
+                        Image(
+                            painter = painterResource(id = R.drawable.ic_baseline_person_24),
+                            contentDescription = "list image",
+                            modifier = Modifier
+                                .size(50.dp)
+                                .clip(CircleShape)
+                            ,
+                        )
+                    }
                 }
+
 
 
 
