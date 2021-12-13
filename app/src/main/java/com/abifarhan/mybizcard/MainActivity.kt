@@ -17,6 +17,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.painterResource
@@ -135,6 +136,10 @@ fun PortFolio(data: List<String>) {
                     .padding(13.dp)
                     .fillMaxWidth()
             ) {
+
+                Column() {
+
+                }
                 Surface(modifier = Modifier
                     .size(
                         50.dp, 50.dp
@@ -148,11 +153,14 @@ fun PortFolio(data: List<String>) {
                     Image(
                         painter = painterResource(id = R.drawable.ic_baseline_person_24),
                         contentDescription = "list image",
-                        modifier = Modifier.size(50.dp),
+                        modifier = Modifier
+                            .size(50.dp)
+                            .clip(CircleShape)
+                        ,
                     )
                 }
 
-                Text(text = "here we go")
+
 
             }
         }
@@ -200,11 +208,3 @@ private fun CreateImageProfile(modifier: Modifier = Modifier) {
         )
     }
 }
-//
-//@Preview(showBackground = true)
-//@Composable
-//fun DefaultPreview() {
-//    MyBizCardTheme {
-//        CreateBizCard()
-//    }
-//}
