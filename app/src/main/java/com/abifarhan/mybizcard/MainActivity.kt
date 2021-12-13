@@ -133,20 +133,27 @@ fun PortFolio(data: List<String>) {
             Card(
                 modifier = Modifier
                     .padding(13.dp)
-                    .fillMaxWidth(),
-                shape = CircleShape,
+                    .fillMaxWidth()
             ) {
-                Surface(modifier = Modifier.size(
-                    50.dp, 50.dp)
-                    .padding(5.dp)
+                Surface(modifier = Modifier
+                    .size(
+                        50.dp, 50.dp
+                    )
+                    .padding(5.dp),
+                    shape = CircleShape,
+                    border = BorderStroke(0.5.dp, Color.LightGray),
+                    elevation = 4.dp,
+                    color = MaterialTheme.colors.onSurface.copy(alpha = 0.5f)
                 ) {
-
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_baseline_person_24),
+                        contentDescription = "list image",
+                        modifier = Modifier.size(50.dp),
+                    )
                 }
-                Image(
-                    painter = painterResource(id = R.drawable.ic_baseline_person_24),
-                    contentDescription = "list image",
-                    modifier = Modifier.size(50.dp)
-                )
+
+                Text(text = "here we go")
+
             }
         }
     }
