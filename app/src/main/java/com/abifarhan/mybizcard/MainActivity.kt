@@ -20,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
@@ -137,18 +138,18 @@ fun PortFolio(data: List<String>) {
             Card(
                 modifier = Modifier
                     .padding(13.dp)
-                    .fillMaxWidth()
+                    .fillMaxWidth(),
+                shape = RectangleShape
             ) {
-
                 Row(
                     modifier = Modifier
                         .padding(8.dp)
                         .background(MaterialTheme.colors.surface)
                         .padding(16.dp)
                 ) {
-                    Surface(modifier = Modifier.size(50.dp)) {
+                    CreateImageProfile(modifier = Modifier.size(100.dp))
+                    Text(text = item)
 
-                    }
                 }
 
 
@@ -183,7 +184,7 @@ private fun CreateInfo() {
 @Composable
 private fun CreateImageProfile(modifier: Modifier = Modifier) {
     Surface(
-        modifier = Modifier
+        modifier = modifier
             .size(150.dp, 150.dp)
             .padding(5.dp),
         shape = CircleShape,
@@ -194,7 +195,7 @@ private fun CreateImageProfile(modifier: Modifier = Modifier) {
         Image(
             painter = painterResource(id = R.drawable.ic_baseline_person_24),
             contentDescription = "Profile Image",
-            modifier = Modifier.size(135.dp)
+            modifier = modifier.size(135.dp)
         )
     }
 }
