@@ -148,7 +148,14 @@ fun PortFolio(data: List<String>) {
                         .padding(16.dp)
                 ) {
                     CreateImageProfile(modifier = Modifier.size(100.dp))
-                    Text(text = item)
+                    Column(modifier = Modifier
+                        .padding(13.dp)
+                        .background(MaterialTheme.colors.secondary)
+                        .padding(16.dp)
+                    ) {
+                        Text(text = item)
+                        Text(text = "An Mobile Developer")
+                    }
 
                 }
 
