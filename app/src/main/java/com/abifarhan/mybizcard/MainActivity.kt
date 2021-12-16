@@ -139,7 +139,8 @@ fun PortFolio(data: List<String>) {
                 modifier = Modifier
                     .padding(13.dp)
                     .fillMaxWidth(),
-                shape = RectangleShape
+                shape = RectangleShape,
+                elevation = 4.dp
             ) {
                 Row(
                     modifier = Modifier
