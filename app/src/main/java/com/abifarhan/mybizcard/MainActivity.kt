@@ -152,9 +152,9 @@ fun PortFolio(data: List<String>) {
                     Column(modifier = Modifier
                         .padding(13.dp)
                         .background(MaterialTheme.colors.secondary)
-                        .padding(16.dp)
+                        .padding(7.dp)
                     ) {
-                        Text(text = item)
+                        Text(text = item, fontWeight = FontWeight.Bold)
                         Text(text = "An Mobile Developer")
                     }
 
