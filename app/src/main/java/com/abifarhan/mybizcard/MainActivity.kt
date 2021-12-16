@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -85,7 +86,9 @@ fun CreateBizCard() {
                 if (buttonClickedState.value) {
                     Content()
                 } else {
-                    Box() {}
+                    Box() {
+
+                    }
 
                 }
             }
@@ -119,6 +122,7 @@ fun Content() {
                     "Project 3",
                     "Project 4",
                     "Project 5",
+                    "Project 6",
                 )
             )
 
@@ -136,33 +140,16 @@ fun PortFolio(data: List<String>) {
                     .fillMaxWidth()
             ) {
 
-                Column(
-                    modifier = Modifier.height(300.dp),
-                    verticalArrangement = Arrangement.Top,
-                    horizontalAlignment = Alignment.Start
+                Row(
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .background(MaterialTheme.colors.surface)
+                        .padding(16.dp)
                 ) {
-                    Surface(modifier = Modifier
-                        .size(
-                            50.dp, 50.dp
-                        )
-                        .padding(5.dp),
-                        shape = CircleShape,
-                        border = BorderStroke(0.5.dp, Color.LightGray),
-                        elevation = 4.dp,
-                        color = MaterialTheme.colors.onSurface.copy(alpha = 0.5f)
-                    ) {
-                        Image(
-                            painter = painterResource(id = R.drawable.ic_baseline_person_24),
-                            contentDescription = "list image",
-                            modifier = Modifier
-                                .size(50.dp)
-                                .clip(CircleShape)
-                            ,
-                        )
+                    Surface(modifier = Modifier.size(50.dp)) {
+
                     }
                 }
-
-
 
 
             }
