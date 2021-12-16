@@ -153,6 +153,7 @@ fun PortFolio(data: List<String>) {
                         .padding(13.dp)
                         .background(MaterialTheme.colors.secondary)
                         .padding(7.dp)
+                        .align(alignment = Alignment.CenterVertically)
                     ) {
                         Text(text = item, fontWeight = FontWeight.Bold)
                         Text(text = "An Mobile Developer")
